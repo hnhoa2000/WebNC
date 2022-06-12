@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "acToken": {
+            "type": "string"
+        },
+        "rfToken": {
+            "type": "string"
+        },
+        "isTeacher": {
+            "type": "boolean"
+        },
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "username",
+        "password"
+    ],
+    "additionalProperties": false
+}
