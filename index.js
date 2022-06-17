@@ -1,5 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
+import userRouter from './routes/user.route.js'
+import authRouter from './routes/auth.route.js'
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -7,7 +9,8 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(morgan('dev'));
 
-
+app.use('/api/users', userRouter);
+app.use('/api/auth', authRouter);
 
 app.get('/', function (req, res) {
     res.send('hello world');

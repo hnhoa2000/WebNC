@@ -7,12 +7,6 @@
         "password": {
             "type": "string"
         },
-        "acToken": {
-            "type": "string"
-        },
-        "rfToken": {
-            "type": "string"
-        },
         "isTeacher": {
             "type": "boolean"
         },

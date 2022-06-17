@@ -1,10 +1,9 @@
 import jwt from 'jsonwebtoken';
-export default function (req,res,next){
+export default function (req, res, next) {
   const accessToken = req.headers['x-access-token'];
-  if(accessToken){
+  if (accessToken) {
     try {
-      const decode = jwt.verify(accessToken,'SECRET_KEY');
-      const accessTokenPayload = decode;
+      const decoded = jwt.verify(accessToken, 'SECRET_KEY');
       next();
     } catch (error) {
       console.log(error);
@@ -12,7 +11,7 @@ export default function (req,res,next){
         message: 'Invalid accessToken'
       });
     }
-  }else{
+  } else {
     return res.status(401).json({
       message: 'AccessToken not found'
     })
