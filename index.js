@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import userRouter from './routes/user.route.js'
 import authRouter from './routes/auth.route.js'
+import quizRouter from './routes/quiz.route.js'
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,6 +12,7 @@ app.use(morgan('dev'));
 
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/quiz', quizRouter);
 
 app.get('/', function (req, res) {
     res.send('hello world');
