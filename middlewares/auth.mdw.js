@@ -4,6 +4,7 @@ export default function (req, res, next) {
   if (accessToken) {
     try {
       const decoded = jwt.verify(accessToken, 'SECRET_KEY');
+      req.payloadToken = decoded;
       next();
     } catch (error) {
       console.log(error);

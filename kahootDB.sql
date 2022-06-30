@@ -1,18 +1,14 @@
 
-create database kahoot;
 use kahoot;
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
-
-
 -- ----------------------------
 -- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `userId` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(50) NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `rfToken` varchar(255) NULL,
@@ -29,7 +25,7 @@ DROP TABLE IF EXISTS `quiz`;
 CREATE TABLE `quiz` (
   `quizId` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  `isOpened` boolean NOT NULL,
+  `isOpened` boolean NOT NULL DEFAULT FALSE,
   `userId` smallint(5) unsigned NOT NULL,
   `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`quizId`),
