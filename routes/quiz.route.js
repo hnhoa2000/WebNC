@@ -40,8 +40,5 @@ router.get('/:nameQuiz', async function (req, res) {
     res.status(201).json(result);
 })
 
-router.post('/', async (req, res) => {
-
-});
 
 export default router;
